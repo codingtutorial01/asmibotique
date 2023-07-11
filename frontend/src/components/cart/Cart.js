@@ -1,15 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./cart.css";
 import { Divider } from "@mui/material";
-import { NavLink } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
+import { useDispatch } from "react-redux";
+import { getAllProducts } from "../redux/actions/action";
 
 const Cart = () => {
+   
+    const dispatch = useDispatch();
+    const {id} = useParams("");
+    const [inddata, setinddata] = useState([]);
+    console.log(inddata);
+    const getinddata = async () => {
+        const data = await fetch(`http://localhost:3000/api/products/${id}`,{
+            method:"GET",
+            headers:{
+                "Content-Type":"application/json"
+            }
+        }); 
+        const res = await data.json();
+        console.log(res);   
+        if(res.status == "success"){
+            setinddata(res);            
+        }
+    }
+
+
+    useEffect(() => {
+        dispatch(getAllProducts())
+    },[id])
+
     return <div className="cart_section">
         <div className="cart_container">
             <div className="left_cart">
                 <img src="https://rukminim1.flixcart.com/image/150/150/kohigsw0/resistance-tube/c/s/e/new-adjustable-single-resistance-tube-multicolor-na-ajro-deal-original-imag2xg88mhmwxz5.jpeg?q=70" alt="cart_img" />
                 <div className="cart_btn">
-                    <button  className="cart_btn1">Add to Cart</button>
+                    <button  className="cart_btn1">{console.log(inddata)}Add to Cart</button>
                     <NavLink to="/buynow"><button  className="cart_btn2">Buy Now</button> </NavLink>
                 </div>           
                 </div>
