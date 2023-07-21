@@ -1,31 +1,7 @@
 import {
     getAllProductsRepo
   } from "../repositories/Products";
-  import {
-    getAllProductsPending,
-    getAllProductsFulfilled,
-    getAllProductsRejected,
-      } from "../slices/Products";
-  
-  export const getAllProducts = () => {
-    return (dispatch) => {
-      dispatch(getAllProductsPending());
-      getAllProductsRepo()
-        .then((response) => {
-          if (response.status === 200) {
-            console.log(response.data?.data);
-            dispatch(getAllProductsFulfilled(response?.data?.data));
-          } else {
-            dispatch(getAllProductsRejected(response?.message));
-          }
-        })
-        .catch((error) => {
-          if (error && error.response) {
-            dispatch(getAllProductsRejected(error.message));
-          }
-        });
-    };
-  };
+
 
 export const getProducts = ()=> async(dispatch)=>{
     try {

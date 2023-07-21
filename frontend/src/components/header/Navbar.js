@@ -10,11 +10,11 @@ export default function Navbar() {
   return (
     <div>
 
-      <header>
+      <header style={{height: "90px"}}>
         <nav>
           <div className="left">
             <div className='navlogo'>
-              <NavLink to="/"> <img src='./amazon_PNG25.png' alt="" /></NavLink>
+              <NavLink to="/"> <img src='./AsmiBoutique.png' alt="" /></NavLink>
 
             </div>
             <div className='nav_searchbaar'>

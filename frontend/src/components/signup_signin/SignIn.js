@@ -28,8 +28,8 @@ const SignIn = () => {
         <>
             <section>
                 <div className="sign_container">
-                    <div className="sign_header">
-                        <img src="./blacklogoamazon.png" alt="amazonlogo" />
+                    <div className="">
+                        <img width="150px" style={{marginTop:"25px", marginBottom:"80px"}} src="./AsmiBoutique.png" alt="amazonlogo" />
                     </div>
                     <div className="sign_form">
                         <form>
@@ -51,7 +51,7 @@ const SignIn = () => {
                     </div>
                     <div className="create_accountinfo">
                         <p>New To Amazon</p>
-                        <NavLink to="/register"><button>Create Your Amazon Account</button> </NavLink>
+                        <NavLink to="/register"><button>Create Your Account</button> </NavLink>
                     </div>
                 </div>
             </section>

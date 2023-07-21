@@ -53,20 +53,22 @@ const Slide = ({ title, products }) => {
                     products.map((e) => {
                         return (
                             <NavLink to={`/getproductsone/${e.productId}`}>
-                                <div className="products_items">
-                                    <div className="product_img">
-                                        {/* <img src={e.url} alt="product" /> */}
+                                <div className="products_items" style={{border: "1px solid #E0E0E0", margin: "10px" , width: "300px"}}>
+                                   
+                                    <div className="center_img">
+                                        <img src="./Kurta01.jpeg" alt="" />
                                     </div>
-                                    <p className="products_name">{e?.productName}</p>
-                                    <p className="products_offer" style={{ color: "#  007185" }}>{e?.discount}</p>
-                                    <p className="products_explore">{e?.tagline}</p>
+                                    <p style={{textAlign:"left"}}className="products_name"><b>{e?.productName}</b></p>
+                                    <p className="products_offer" style={{ color: "#606471" }}>{e?.titleDescription}</p>
+                                    <p className="products_explore">{e?.mrp}</p>
                                 </div>
                             </NavLink>
                         )
                     })
                 }
 
-            </Carousel>) : null
+            </Carousel>
+            ) : null
         }
         
         </div>

@@ -30,7 +30,7 @@ const Footer = () => {
                  </div>
             </div>
             <div className='lastdetails'>
-                <img src="./amazon_PNG25.png"  alt="" />
+                <img src="./AsmiBoutique.png"  alt="" />
                 <p>Condition of use & sale &nbsp;&nbsp;   Privacy Notice&nbsp;&nbsp;  Interest Based Adds 1996-{year},&nbsp;  Amazon.com </p>
             </div>
         </footer>

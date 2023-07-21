@@ -3,7 +3,7 @@ import './NewNav.css'
 const NewNav = () => {
 
     return (
-        <div className='new_nav'>
+        <div className='new_nav' style={{marginTop: "25px"}}>
             <div className='nav_data'>
                 <div className='left_data'>
                     <p>All</p>
