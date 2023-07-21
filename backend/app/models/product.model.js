@@ -10,6 +10,16 @@ const productSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  img: {
+    data: Buffer,
+    contentType: String
+  },
+  colors: {
+    type: [String]
+  },
+  sizes: {
+    type: [String],
+  },
   title: {
     type: String,
   },
@@ -23,9 +33,6 @@ const productSchema = new mongoose.Schema({
     type: String,
   },
   discountPercentage: {
-    type: String,
-  },
-  size: {
     type: String,
   },
   material: {
