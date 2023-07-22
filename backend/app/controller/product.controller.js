@@ -1,4 +1,5 @@
 const productService = require("../services/product.service");
+const UserModel = require("../models/user.model");
 
 
 exports.getAllProducts = async (req, res) => {
@@ -46,6 +47,21 @@ exports.deleteProduct = async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
+
+
 };
 
-exports 
+exports.register = async (req, res) => {
+  const { fname, email, mobile, password, cpassword } = req.body;
+  const finaluser = new User({
+    fname, email, mobile, password, cpassword
+  });
+
+  // yaha pe hasing krenge
+
+  const storedata = await finaluser.save();
+  // console.log(storedata + "user successfully added");
+  res.status(201).json(storedata);
+
+
+};
